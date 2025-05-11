@@ -12,7 +12,7 @@ This project is a web-based dashboard for managing and viewing recent expenses, 
   - Role-based access control
   - Password recovery
   - Remember me functionality
-- **Image:** [View Login](assets/prev_1_(1).png)
+- **Image:** [View Login](assets/login.png)
 
 ### 📊 Dashboard
 - **Overview:** Main landing page showing key metrics and recent activities
