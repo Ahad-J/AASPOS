@@ -1,4 +1,3 @@
-````markdown
 # <span style="color: #FF6B6B; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">A</span><span style="color: #4ECDC4;">A</span><span style="color: #45B7D1;">S</span><span style="color: #96CEB4;">P</span><span style="color: #FFEEAD;">O</span><span style="color: #FF9999;">S</span> 🚀
 
 ![Animated Dashboard Preview](https://via.placeholder.com/800x400.gif?text=Animated+Dashboard+Preview+Here)
