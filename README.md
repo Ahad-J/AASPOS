@@ -1,3 +1,8 @@
+Here’s your updated `README.md` with the **🎬 Live Preview** section added before the `## 🚀 Getting Started` section, using your local `assets/preview.mp4`:
+
+---
+
+````markdown
 # <span style="color: #FF6B6B; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">A</span><span style="color: #4ECDC4;">A</span><span style="color: #45B7D1;">S</span><span style="color: #96CEB4;">P</span><span style="color: #FFEEAD;">O</span><span style="color: #FF9999;">S</span> 🚀
 
 ![Animated Dashboard Preview](https://via.placeholder.com/800x400.gif?text=Animated+Dashboard+Preview+Here)
@@ -23,15 +28,24 @@
 
 ---
 
+## 🎬 Live Preview
+
+[![Watch the preview](https://via.placeholder.com/800x400.png?text=Click+to+Watch+Preview)](./assets/preview.mp4)
+
+> 🎥 **Click the image above to watch a short video of AASPOS in action.**
+
+---
+
 ## 🚀 **Getting Started**
 
 ### 📋 **Prerequisites**
 ```bash
 Node.js >= 18.x
 npm >= 9.x
-```
+````
 
 ### ⚡ **Quick Installation**
+
 ```bash
 git clone https://github.com/your-username/AASPOS.git
 cd AASPOS
@@ -56,6 +70,7 @@ useEffect(() => {
     .catch(error => handleError(error));
 }, []);
 ```
+
 </details>
 
 <details>
@@ -68,30 +83,31 @@ graph TD
   C -->|Valid| D[Database]
   C -->|Invalid| E[Error Handling]
 ```
+
 </details>
 
 ---
 
 ## 🖼 **Visual Journey**
 
-| Feature          | Preview                          |
-|------------------|----------------------------------|
-| Expense Overview | ![Expense Preview](https://via.placeholder.com/300x200?text=Expenses+View) |
+| Feature          | Preview                                                                        |
+| ---------------- | ------------------------------------------------------------------------------ |
+| Expense Overview | ![Expense Preview](https://via.placeholder.com/300x200?text=Expenses+View)     |
 | Billing System   | ![Billing Preview](https://via.placeholder.com/300x200?text=Billing+Interface) |
-| User Management  | ![Users Preview](https://via.placeholder.com/300x200?text=User+Dashboard) |
+| User Management  | ![Users Preview](https://via.placeholder.com/300x200?text=User+Dashboard)      |
 
 ---
 
 ## 🌟 **Why Choose AASPOS?**
 
 <div align="center">
-  
-  **"Transform Your Financial Management"** 💼
-  
-  | Speed       | Security    | Simplicity  |
-  |-------------|-------------|-------------|
-  | ⚡ Real-time | 🔒 Encrypted | 🧩 Intuitive |
-  | 🚀 Fast API  | 🛡 Protected | 🎯 Precise   |
+
+**"Transform Your Financial Management"** 💼
+
+| Speed       | Security     | Simplicity   |
+| ----------- | ------------ | ------------ |
+| ⚡ Real-time | 🔒 Encrypted | 🧩 Intuitive |
+| 🚀 Fast API | 🛡 Protected | 🎯 Precise   |
 
 </div>
 
@@ -118,22 +134,11 @@ MIT License © 2024 Your Name
 Permission is hereby granted... (see LICENSE for full text)
 ```
 
----
-
-> **Pro Tip:** Replace placeholder images/GIFs with your actual screenshots and recordings! 🎥  
-> For true title animation, consider adding an animated SVG or link to hosted Lottie animation.
 ```
 
-**To add actual animations**:
-1. Create screen recordings using tools like [ScreenToGif](https://www.screentogif.com/)
-2. Host animated GIFs/MP4s in your repo's `/assets` folder
-3. Replace placeholder URLs with actual media links
-4. For advanced animations:
-   ```html
-   <!-- Add to README.md -->
-   <img src="https://assets8.lottiefiles.com/packages/lf20_kmf0bocq.json" 
-        alt="animated-icon" 
-        width="100" 
-        style="display: inline-block">
-   ```
+---
 
+✅ Once you commit and push the `assets/preview.mp4` file along with this updated `README.md`, the preview link will work on GitHub.
+
+Would you like a thumbnail image generated from your video for better visual engagement?
+```
