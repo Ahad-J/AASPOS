@@ -1,5 +1,3 @@
-Here’s your updated `README.md` with the **🎬 Live Preview** section added before the `## 🚀 Getting Started` section, using your local `assets/preview.mp4`:
-
 ---
 
 ````markdown
@@ -134,11 +132,4 @@ MIT License © 2024 Your Name
 Permission is hereby granted... (see LICENSE for full text)
 ```
 
-```
 
----
-
-✅ Once you commit and push the `assets/preview.mp4` file along with this updated `README.md`, the preview link will work on GitHub.
-
-Would you like a thumbnail image generated from your video for better visual engagement?
-```
