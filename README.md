@@ -1,4 +1,36 @@
-# 📊 Expense Dashboard
+<div align="center" style="
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 2.5rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    margin: 2rem 0;
+    border: 2px solid #2a9df4;
+">
+    <h1 style="
+        font-family: 'Arial Black', sans-serif;
+        font-size: 3.5rem;
+        background: linear-gradient(45deg, #00b4d8 0%, #90e0ef 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 15px rgba(144,224,239,0.5);
+        letter-spacing: 2px;
+        margin: 0;
+    ">
+        AASPOS
+    </h1>
+    <p style="
+        color: #caf0f8;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        font-weight: 300;
+        letter-spacing: 1.5px;
+    ">
+        Advanced Analytics Sales Point-of-Sale System
+    </p>
+</div>
+
+# 📊 AASPOS
 
 ---
 
