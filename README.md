@@ -52,7 +52,7 @@ A responsive React-based dashboard integrated with a Node.js backend and SQL Ser
 ---
 
 ### 👨‍💼 **Employees**  
-![Employees Preview](assets/employees.png) *Team management made simple*  
+![Employees Preview](assets/employee.png) *Team management made simple*  
 - **Features:**  
   - 👤 Employee role management  
   - 📊 Performance analytics  
