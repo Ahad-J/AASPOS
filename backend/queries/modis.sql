@@ -1,0 +1,148 @@
+---- 2. Get Profit Calculation
+--CREATE OR ALTER PROCEDURE GetProfit
+--    @start_date DATETIME = NULL,
+--    @end_date DATETIME = NULL
+--AS
+--BEGIN
+--    SET NOCOUNT ON;
+--    BEGIN TRY
+--        DECLARE @total_sales DECIMAL(18,2),
+--                @total_expenses DECIMAL(18,2),
+--                @profit DECIMAL(18,2);
+
+--        -- Calculate total sales from completed bills
+--        SELECT @total_sales = SUM(bl.quantity * bl.unit_price)
+--        FROM bill_log bl
+--        INNER JOIN bill b ON bl.bill_id = b.bill_id
+--        WHERE b.is_completed = 1
+--        AND (@start_date IS NULL OR b.created_at >= @start_date)
+--        AND (@end_date IS NULL OR b.created_at <= @end_date);
+
+--        -- Calculate total expenses (excluding sales)
+--        SELECT @total_expenses = SUM(expense_price)
+--        FROM expense
+--        WHERE expense_type <> 'Sale'
+--        AND (@start_date IS NULL OR expense_date >= @start_date)
+--        AND (@end_date IS NULL OR expense_date <= @end_date);
+
+--        SET @profit = ISNULL(@total_sales, 0) - ISNULL(@total_expenses, 0);
+
+--        SELECT 
+--            ISNULL(@total_sales, 0) AS total_sales,
+--            ISNULL(@total_expenses, 0) AS total_expenses,
+--            @profit AS net_profit;
+--    END TRY
+--    BEGIN CATCH
+--        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+--        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+--        DECLARE @ErrorState INT = ERROR_STATE();
+--        RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+--    END CATCH
+--END;
+
+--CREATE OR ALTER PROCEDURE GetDailySales
+--    @start_date DATETIME = NULL,
+--    @end_date DATETIME = NULL
+--AS
+--BEGIN
+--    SET NOCOUNT ON;
+--    BEGIN TRY
+--         Get daily sales from completed bills
+--        SELECT 
+--            CAST(b.created_at AS DATE) AS sale_date,
+--            SUM(bl.quantity * bl.unit_price) AS daily_sales
+--        FROM bill_log bl
+--        INNER JOIN bill b ON bl.bill_id = b.bill_id
+--        WHERE b.is_completed = 1
+--        AND (@start_date IS NULL OR b.created_at >= @start_date)
+--        AND (@end_date IS NULL OR b.created_at <= @end_date)
+--        GROUP BY CAST(b.created_at AS DATE)
+--        ORDER BY sale_date;
+--    END TRY
+--    BEGIN CATCH
+--        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+--        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+--        DECLARE @ErrorState INT = ERROR_STATE();
+--        RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+--    END CATCH
+--END;
+
+--CREATE OR ALTER PROCEDURE GetTopSellingProducts
+--    @limit INT = 3
+--AS
+--BEGIN
+--    SET NOCOUNT ON;
+--    BEGIN TRY
+--        SELECT TOP (@limit)
+--            p.product_id,
+--            p.product_name,
+--            p.product_type,
+--            SUM(bl.quantity) as total_quantity_sold
+--        FROM bill_log bl
+--        INNER JOIN product p ON bl.product_id = p.product_id
+--        INNER JOIN bill b ON bl.bill_id = b.bill_id
+--        WHERE b.is_completed = 1
+--        GROUP BY p.product_id, p.product_name, p.product_type
+--        ORDER BY total_quantity_sold DESC;
+--    END TRY
+--    BEGIN CATCH
+--        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+--        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+--        DECLARE @ErrorState INT = ERROR_STATE();
+--        RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+--    END CATCH
+--END;
+--GO
+--CREATE OR ALTER PROCEDURE GetLowStockProducts
+--    @limit INT = 3
+--AS
+--BEGIN
+--    SET NOCOUNT ON;
+--    BEGIN TRY
+--        SELECT TOP (@limit)
+--            product_id,
+--            product_name,
+--            product_type,
+--            product_quantity,
+--            min_stock
+--        FROM product
+--        WHERE product_available = 1
+--        AND product_quantity <= min_stock
+--        ORDER BY product_quantity ASC;
+--    END TRY
+--    BEGIN CATCH
+--        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+--        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+--        DECLARE @ErrorState INT = ERROR_STATE();
+--        RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+--    END CATCH
+--END;
+
+--CREATE OR ALTER PROCEDURE GetUserProfile
+--    @emp_id VARCHAR(4)
+--AS
+--BEGIN
+--    SET NOCOUNT ON;
+--    BEGIN TRY
+--        SELECT 
+--            e.employee_id,
+--            e.employee_name,
+--            e.employee_designation as role,
+--            e.employee_email,
+--            e.employee_contact_no,
+--            COUNT(DISTINCT b.bill_id) as total_sales
+--        FROM employee e
+--        LEFT JOIN bill b ON e.employee_id = b.bill_cashier
+--        WHERE e.employee_id = @emp_id
+--        GROUP BY e.employee_id, e.employee_name, e.employee_designation, e.employee_email, e.employee_contact_no;
+--    END TRY
+--    BEGIN CATCH
+--        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+--        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
+--        DECLARE @ErrorState INT = ERROR_STATE();
+--        RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+--    END CATCH
+--END;
+
+SELECT *
+FROM USERS

@@ -1,0 +1,10 @@
+{
+  "name": "John Doe",
+  "cnic": 3740512345678,
+  "salary": 50000,
+  "contact": "03001234057",
+  "email": "john@example.com",
+  "designation": "Manager",
+  "address": "123 Main Street",
+  "available": "1"
+}
